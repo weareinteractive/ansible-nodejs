@@ -1,0 +1,11 @@
+---
+
+- name: Installing packages
+  npm: >
+    name={{ item }}
+    global=yes
+    state=latest
+  with_items: nodejs_packages
+  tags:
+    - web
+    - nodejs

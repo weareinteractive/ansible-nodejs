@@ -1,0 +1,8 @@
+---
+# For more information about default variables see:
+# http://www.ansibleworks.com/docs/playbooks_variables.html#id26
+
+# global packages to install
+nodejs_packages: []
+# apt repository name
+nodejs_apt_repository: ppa:chris-lea/node.js
