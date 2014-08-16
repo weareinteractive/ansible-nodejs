@@ -1,7 +1,7 @@
 # Ansible Nodejs Role
 
-[![Build Status](https://travis-ci.org/weareinteractive/ansible-role-nodejs.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-role-nodejs)
-[![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-role-nodejs.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-role-nodejs)
+[![Build Status](https://travis-ci.org/weareinteractive/ansible-nodejs.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-nodejs)
+[![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-nodejs.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-nodejs)
 
 > `nodejs` is an [ansible](http://www.ansible.com) role which: 
 > 
@@ -27,7 +27,7 @@ $ arm install franklinkim.nodejs
 Using `git`:
 
 ```
-$ git clone https://github.com/weareinteractive/ansible-role-nodejs.git
+$ git clone https://github.com/weareinteractive/ansible-nodejs.git
 ```
 
 ## Variables
@@ -53,8 +53,8 @@ nodejs_apt_repository: ppa:chris-lea/node.js
 ## Testing
 
 ```
-$ git clone https://github.com/weareinteractive/ansible-role-nodejs.git
-$ cd ansible-role-nodejs
+$ git clone https://github.com/weareinteractive/ansible-nodejs.git
+$ cd ansible-nodejs
 $ vagrant up
 ```
 
