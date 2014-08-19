@@ -4,8 +4,9 @@
   npm: >
     name={{ item }}
     global=yes
-    state=latest
+    state=present
   with_items: nodejs_packages
   tags:
     - web
     - nodejs
+    - packages

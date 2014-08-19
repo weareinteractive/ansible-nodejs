@@ -1,19 +1,19 @@
 ---
 
-- name: Adding apt repository
-  apt_repository: >
-    repo={{ nodejs_apt_repository }}
-    update_cache=yes
-  tags:
-    - web
-    - nodejs
-
 - name: Installing packages
   apt: >
     pkg={{ item }}
-    state=latest
+    state=present
   with_items:
     - nodejs
   tags:
     - web
     - nodejs
+    - install
+
+- name: Updating packages
+  command: npm update -g
+  tags:
+    - web
+    - nodejs
+    - install

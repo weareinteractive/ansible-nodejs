@@ -6,9 +6,7 @@
 > `nodejs` is an [ansible](http://www.ansible.com) role which: 
 > 
 > * installs nodejs
-> * configures nodejs
-> * enables/disables sites
-> * optionally removes default host
+> * installs global npm packages
 
 ## Installation
 
@@ -32,11 +30,11 @@ $ git clone https://github.com/weareinteractive/ansible-nodejs.git
 
 ## Variables
 
+Here is a list of all the default variables for this role, which are also available in `defaults/main.yml`.
+
 ```
 # global packages to install
 nodejs_packages: []
-# apt repository name
-nodejs_apt_repository: ppa:chris-lea/node.js
 ```
 
 ## Example playbook
@@ -48,6 +46,15 @@ nodejs_apt_repository: ppa:chris-lea/node.js
   vars:
     nodejs_packages:
       - less
+```
+
+## Notes
+
+You can use `franklinkim.apt` to add a repository to get the latest `nodejs`:
+
+```
+apt_repositories:
+  - 'ppa:chris-lea/node.js'
 ```
 
 ## Testing
