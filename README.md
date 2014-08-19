@@ -41,9 +41,12 @@ nodejs_packages: []
 
 ```
 - host: all
-  roles: 
+  roles:
+    - franklinkim.apt
     - franklinkim.nodejs
   vars:
+    apt_repositories:
+      - 'ppa:chris-lea/node.js'
     nodejs_packages:
       - less
 ```
