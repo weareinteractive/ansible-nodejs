@@ -4,9 +4,17 @@
   npm: >
     name={{ item }}
     global=yes
-    state=present
+    state={{ nodejs_packages_state }}
   with_items: nodejs_packages
   tags:
     - web
     - nodejs
     - packages
+
+- name: Updating global packages
+  command: npm update -g
+  when: nodejs_packages_update
+  tags:
+    - web
+    - nodejs
+    - update
