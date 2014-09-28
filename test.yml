@@ -9,3 +9,4 @@
       - 'ppa:chris-lea/node.js'
     nodejs_packages:
       - less
+    nodejs_packages_state: latest

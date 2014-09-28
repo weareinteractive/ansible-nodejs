@@ -35,6 +35,10 @@ Here is a list of all the default variables for this role, which are also availa
 ```
 # global packages to install
 nodejs_packages: []
+# global packages state (present|latest)
+nodejs_packages_state: present
+# update all global packages
+nodejs_packages_update: no
 ```
 
 ## Example playbook
@@ -49,6 +53,7 @@ nodejs_packages: []
       - 'ppa:chris-lea/node.js'
     nodejs_packages:
       - less
+    nodejs_packages_state: latest
 ```
 
 ## Notes
