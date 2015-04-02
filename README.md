@@ -1,7 +1,9 @@
 # Ansible Nodejs Role
 
-[![Build Status](https://travis-ci.org/weareinteractive/ansible-nodejs.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-nodejs)
-[![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-nodejs.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-nodejs)
+[![Build Status](https://img.shields.io/travis/weareinteractive/ansible-nodejs.svg)](https://travis-ci.org/weareinteractive/ansible-nodejs)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/weareinteractive/ansible-nodejs/master/LICENSE)
+[![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-nodejs.svg)](https://github.com/weareinteractive/ansible-nodejs)
+[![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-nodejs.svg)](https://github.com/weareinteractive/ansible-nodejs)
 
 > `nodejs` is an [ansible](http://www.ansible.com) role which:
 >
@@ -37,6 +39,8 @@ Here is a list of all the default variables for this role, which are also availa
 #   - less
 #   - { name: recess, version: 1.1.9 }
 
+# define version
+nodejs_version: 0.10
 # define package (version)
 nodejs_package: nodejs
 # global packages to install
