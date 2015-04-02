@@ -1,20 +1,9 @@
 ---
 
 - name: Installing packages
-  npm: >
-    name={{ item }}
-    global=yes
-    state={{ nodejs_packages_state }}
+  npm:
+    global: yes
+    name: "{{ item.name if item.name is defined else item }}"
+    version: "{{ item.version | default(omit) }}"
+    state: present
   with_items: nodejs_packages
-  tags:
-    - web
-    - nodejs
-    - packages
-
-- name: Updating global packages
-  command: npm update -g
-  when: nodejs_packages_update
-  tags:
-    - web
-    - nodejs
-    - update

@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/weareinteractive/ansible-nodejs.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-nodejs)
 [![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-nodejs.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-nodejs)
 
-> `nodejs` is an [ansible](http://www.ansible.com) role which: 
-> 
+> `nodejs` is an [ansible](http://www.ansible.com) role which:
+>
 > * installs nodejs
 > * installs global npm packages
 
@@ -16,10 +16,10 @@ Using `ansible-galaxy`:
 $ ansible-galaxy install franklinkim.nodejs
 ```
 
-Using `arm` ([Ansible Role Manager](https://github.com/mirskytech/ansible-role-manager/)):
+Using `requirements.yml`:
 
 ```
-$ arm install franklinkim.nodejs
+- src: franklinkim.nodejs
 ```
 
 Using `git`:
@@ -33,6 +33,12 @@ $ git clone https://github.com/weareinteractive/ansible-nodejs.git
 Here is a list of all the default variables for this role, which are also available in `defaults/main.yml`.
 
 ```
+# node_packages:
+#   - less
+#   - { name: recess, version: 1.1.9 }
+
+# define package (version)
+nodejs_package: nodejs
 # global packages to install
 nodejs_packages: []
 # global packages state (present|latest)
@@ -44,25 +50,14 @@ nodejs_packages_update: no
 ## Example playbook
 
 ```
-- host: all
+- hosts: all
+  sudo: yes
   roles:
-    - franklinkim.apt
     - franklinkim.nodejs
   vars:
-    apt_repositories:
-      - 'ppa:chris-lea/node.js'
     nodejs_packages:
       - less
-    nodejs_packages_state: latest
-```
-
-## Notes
-
-You can use `franklinkim.apt` to add a repository to get the latest `nodejs`:
-
-```
-apt_repositories:
-  - 'ppa:chris-lea/node.js'
+      - { name: recess, version: 1.1.9 }
 ```
 
 ## Testing

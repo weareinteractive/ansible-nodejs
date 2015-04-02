@@ -1,4 +1,13 @@
 ---
 
 - include: install.yml
+  tags:
+    - web
+    - nodejs
+    - nodejs-install
+
 - include: packages.yml
+  tags:
+    - web
+    - nodejs
+    - nodejs-packages
