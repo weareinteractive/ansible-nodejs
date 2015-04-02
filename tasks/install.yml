@@ -1,12 +1,18 @@
 ---
 
+- name: Adding APT key
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+
+- name: Add APT repository
+  apt_repository:
+    repo: "deb https://deb.nodesource.com/node_0.10 {{ ansible_distribution_release }} main"
+    update_cache: yes
+
 - name: Installing packages
-  apt: >
-    pkg={{ item }}
-    state=present
+  apt:
+    pkg: "{{ item }}"
+    state: present
   with_items:
-    - nodejs
-  tags:
-    - web
-    - nodejs
-    - install
+    - "{{ nodejs_package }}"
+    - build-essential
