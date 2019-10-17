@@ -1,12 +1,12 @@
 ---
 
-- include: install.yml
+- import_tasks: install.yml
   tags:
     - web
     - nodejs
     - nodejs-install
 
-- include: packages.yml
+- import_tasks: packages.yml
   tags:
     - web
     - nodejs
