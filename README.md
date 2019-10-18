@@ -36,7 +36,7 @@ $ git clone https://github.com/weareinteractive/ansible-nodejs.git weareinteract
 
 ## Dependencies
 
-* Ansible >= 1.9
+* Ansible >= 2.4
 
 ## Variables
 
@@ -52,7 +52,13 @@ Here is a list of all the default variables for this role, which are also availa
 #   - { name: recess, version: 1.1.9 }
 
 # define version
-nodejs_version: "0.10"
+nodejs_version: "10.x"
+# dependencies packages to install package
+nodejs_dependencies:
+  - apt-transport-https
+  - ca-certificates
+  - build-essential
+  - gnupg
 # define package (version)
 nodejs_package: nodejs
 # global packages to install
@@ -73,9 +79,9 @@ This is an example playbook:
 ---
 
 - hosts: all
-  sudo: yes
+  become: yes
   roles:
-    - franklinkim.nodejs
+    - weareinteractive.nodejs
   vars:
     nodejs_packages:
       - less
