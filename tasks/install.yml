@@ -2,7 +2,7 @@
 
 - name: Installing dependencies
   apt:
-    pkg: apt-transport-https
+    pkg: "{{ nodejs_dependencies }}"
     state: present
 
 - name: Adding APT key
@@ -17,5 +17,5 @@
 
 - name: Installing packages
   apt:
-    pkg: ["{{ nodejs_package }}", build-essential]
+    pkg: "{{ nodejs_package }}"
     state: present

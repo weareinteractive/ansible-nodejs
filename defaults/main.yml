@@ -7,7 +7,13 @@
 #   - { name: recess, version: 1.1.9 }
 
 # define version
-nodejs_version: "0.10"
+nodejs_version: "10.x"
+# dependencies packages to install package
+nodejs_dependencies:
+  - apt-transport-https
+  - ca-certificates
+  - build-essential
+  - gnupg
 # define package (version)
 nodejs_package: nodejs
 # global packages to install
